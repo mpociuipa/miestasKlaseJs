@@ -137,14 +137,14 @@ var searchCode = function searchCode() {
       return searchResponse = result;
     }).then(function () {
       console.log(searchResponse.data[0].post_code);
-    }).then(function () {
       document.querySelector('.result').value = searchResponse.data[0].post_code;
+    })["catch"](function (error) {
+      console.error(error);
+      document.querySelector('.result').value = "Error: Address not found";
     });
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (searchCode);
-
-//sukoduoti klaidos pranesima, kad ismestu tokio adreso nera
 
 /***/ }),
 
